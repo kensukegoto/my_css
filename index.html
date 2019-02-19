@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="full">a</section>
+    <section class="w960">b</section>
+    <section class="w960 chap-19">
+      <h2>角の折り返し</h2>
+      <h3>「background」</h3>
+      <p>{background バックグラウンド : -color -image -repeat -position -attachment -clip -size -origin;}<br>
+        background-sizeプロパティの値は、backgroundpositionプロパティの値にスラッシュ(/)で続けて指定</p>
+      <h3>例</h3>
+      <p>
+        background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-repeat 100% 0 / 2em 2em;
+      </p>
+      <p>背景画像のスタート位置を幅100%、高さ0%と指定し、幅と高さをそれぞれ2emとする。</p>
+      <p>折り返し28 * 28 とした場合、背景の切り落としは 28 / √2 となる。</p>
+      <div class="chap-19__01">
+        <p>“The only way to get rid of a temptation is to yield to it.”
+          — Oscar Wilde, The Picture of Dorian Gray</p>
+      </div>
+      <h3>折り返しを４５度以外で指定したい</h3>
+      <p>例えば３０度</p>
+      <div class="chap-19__02">
+        <p>“The only way to get rid of a temptation is to yield to it.”
+          — Oscar Wilde, The Picture of Dorian Gray</p>
+      </div>
+      <h3>解説</h3>
+      <p>下記三角関数を元に計算</p>
+      <p>高さ:1、幅:√3、斜辺:2で角が30、60、90の直角三角形</p>
+      <p>cos30 = √3 / 2<br>
+      sin30 = 1 / 2</p>
+      <div class="chap-19__02_2"></div>
+      <p>折り返しを30度として、サイズを28pxとした場合。右上角から折り返しまでの垂線が28pxとなる。</p>
+      <p>折り返しの影の幅をx、高さをyとする。ここでこの三角形のcosとsinを求めると、<br>
+        cos30= 28 / y<br>
+        sin30= 28 / x<br>
+      となる。先ほどの基本式と合わせると、
+      28 / y= √3 / 2<br>
+      28 / x = 1 / 2<br>
+      となり、xとyの値が求まる。この場合は、y = 56 / √3　、x = 56 となる。</p>
+
+      <h3>自然な折り返しを作る</h3>
+      <p>上述まではliner-gradientを使っていたがこの場合は疑似要素を使う必要がある。</p>
+      <p>まずは今までの折り返しを疑似要素で表現</p>
+      <div class="chap-19__03"></div>
+      <p>折り返しの疑似要素の高さと幅を入れ替えて適切な位置に移動させる。<br>
+      移動量は(幅 - 高さ)で求まる。</p>
+      <div class="chap-19__03_2"></div>
+
+      <h3>更にリッチに</h3>
+      <div class="chap-19__03_3"></div>
+
+      <h3>ミックスイン</h3>
+      <div class="chap-19__03_4">
+        ミックスインで折り返しを作成
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+</body>
+</html>

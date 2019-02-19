@@ -1,0 +1,137 @@
+@import "trigonomitry";
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 14px;
+}
+footer{
+  height: 100px;
+}
+h2{
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+  padding-bottom: .5em;
+  border-bottom: 1px solid #ccc;
+}
+h3{
+  padding-left: 1em;
+  background: linear-gradient(to right,#888 50%,transparent 0) no-repeat 0 0 /.5em 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+p{
+  margin-bottom: 1em;
+}
+.full{
+  width: 100%;
+}
+.w960{
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg-yellow{
+  background-color:yellow;
+}
+
+.chap-19{
+
+  &__01{
+    width: 12em;
+    padding: 2em;
+    margin-bottom: 1em;
+    color: #ffffff;
+    background: #5588aa;
+    background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-repeat 100% 0 / 28px 28px
+    ,linear-gradient(-135deg,transparent 20px,#58a 0);
+  }
+
+  &__02{
+    width: 12em;
+    padding: 2em;
+    margin-bottom: 1em;
+    color: #ffffff;
+    background: #5588aa;
+    background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-repeat 100% 0 / 56px 32px
+    ,linear-gradient(-150deg,transparent 28px,#58a 0);
+  }
+
+  &__02_2{
+    margin-bottom: 1em;
+    height: 100px;
+    width: 173px;
+    color: #ffffff;
+    background: #5588aa;
+    background: linear-gradient(150deg,transparent 50%,#58a 0);
+  }
+
+  &__03,&__03_2,&__03_3{
+    width: 12em;
+    padding: 2em;
+    margin-bottom: 1em;
+    color: #ffffff;
+    background: #5588aa;
+    background: linear-gradient(-150deg,transparent 28px,#58a 0);
+    position: relative;
+    &::before{
+      position: absolute;
+      content: "";
+      display: block;
+      width: 56px;
+      height: 32px;
+      background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) 100% 0;
+      top: 0;
+      right: 0;
+    }
+  }
+  &__03_2,&__03_3{
+    &::before{
+      height: 56px;
+      width: 32px;
+      transform: translateY(-24px) rotate(-30deg);
+      transform-origin: bottom right;
+    }
+  }
+  &__03_3{
+    border-radius: 5px;
+    &::before{
+      background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.2) 0,rgba(0,0,0,.4)) 100% 0 no-repeat;
+      border-bottom-left-radius: inherit;
+      box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,0.15);
+    }
+  }
+
+  @mixin folded-corner($background,$size,$angle: 30deg){
+    position: relative;
+    background: $background;
+    background: linear-gradient($angle - 180deg,transparent $size, $background 0);
+    border-radius: .5em;
+
+    $x: $size / sin($angle);
+    $y: $size / cos($angle);
+
+    &::before{
+      content :"";
+      position: absolute;
+      top: 0;right: 0;
+      background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.2) 0,rgba(0,0,0,.4)) 100% 0 no-repeat;
+      width: $y;
+      height: $x;
+      transform: translateY($y - $x) rotate(2*$angle - 90deg);
+      transform-origin: bottom right;
+      border-bottom-left-radius: inherit;
+      box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,0.2);
+    }
+  }
+  &__03_4{
+    width: 12em;
+    padding: 2em;
+    @include folded-corner(yellow,2em ,40deg );
+  }
+}
