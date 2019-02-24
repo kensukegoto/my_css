@@ -168,3 +168,42 @@ p {
   background-size: auto 3em;
   background-origin: content-box;
 }
+
+.chap-26__01 p span {
+  background: linear-gradient(gray, gray) no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 1.02em;
+}
+
+.chap-31__01 input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.chap-31__01 input[type="checkbox"] + label::before {
+  content: '\a0';
+  display: inline-block;
+  vertical-align: .2em;
+  width: .8em;
+  height: .8em;
+  margin-right: .2em;
+  border-radius: .2em;
+  background: silver;
+  text-indent: .15em;
+  line-height: 0.65;
+}
+
+.chap-31__01 input[type="checkbox"]:checked + label::before {
+  content: '\2713';
+  background: yellowgreen;
+}
+
+.chap-31__01 input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 .1em .1em #58a;
+}
+
+.chap-31__01 input[type="checkbox"]:disabled + label::before {
+  background: gray;
+  box-shadow: none;
+  color: #555;
+}
