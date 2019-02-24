@@ -23,7 +23,12 @@ h3{
   margin-top: 1em;
   margin-bottom: 1em;
 }
-
+h4{
+  padding-bottom: 1em;
+}
+section{
+  margin-bottom: 2em;
+}
 p{
   margin-bottom: 1em;
 }
@@ -134,4 +139,42 @@ p{
     padding: 2em;
     @include folded-corner(yellow,2em ,40deg );
   }
+}
+
+.chap-21{
+  &__01{
+    dl{
+      width: 50%;
+      border: 1px solid #aaa;
+      padding: 10px;
+      dd,dt{
+        display: inline;
+      }
+      dd + dt::before{
+        content: "\A";
+        white-space: pre;
+      }
+      dd + dd::before{
+        content: ", ";
+        font-weight: normal;
+      }
+    }
+
+  }
+}
+
+.chap-22{
+  &__01{
+    pre{
+      padding: .5em;
+      line-height: 1.5;
+      background-color: beige;
+      background-image: linear-gradient(rgba(0,0,0,.2) 50%,transparent 0);
+      background-size: auto 3em;
+      background-origin: content-box;
+    }
+  }
+
+}
+@supports (-ms-ime-align: auto) {
 }
