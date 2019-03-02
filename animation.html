@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+  <main>
+    <section class="chap-42">
+      <div class="ball"></div>
+    </section>
+    <section class="chap-44">
+      <p class="blink">アニメーションが波売っている</p>
+      <p class="blink2">animation-directionでアニメーションの動きを反転</p>
+      <p class="blink3">stepsを使った急な点滅</p>
+    </section>
+    <section class="chap-45">
+      <h1>CSS is awesome!CSS is awesome!</h1>
+      <script>
+
+        function $$(selector,context){
+          context = context || document;
+          var elements = context.querySelectorAll(selector);
+          return Array.prototype.slice.call(elements);
+        }
+
+        $$('h1').forEach(h1 => {
+          console.log(h1);
+          var len = h1.textContent.length,s = h1.style;
+          s.width = len + 'ch';
+          s.animationTimingFunction = "steps("+len+"),steps(1)";
+          s.animationDuration = (len * 0.2) +"s,.8s";
+        });
+
+      </script>
+    </section>
+  </main>
+</body>
+</html>

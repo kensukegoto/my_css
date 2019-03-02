@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+footer {
+  height: 100px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+  padding-bottom: .5em;
+  border-bottom: 1px solid #ccc;
+}
+
+h3 {
+  padding-left: 1em;
+  background: linear-gradient(to right, #888 50%, transparent 0) no-repeat 0 0/0.5em 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h4 {
+  padding-bottom: 1em;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+.full {
+  width: 100%;
+}
+
+.w960 {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.chap-19__01 {
+  width: 12em;
+  padding: 2em;
+  margin-bottom: 1em;
+  color: #ffffff;
+  background: #5588aa;
+  background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.4) 0) no-repeat 100% 0/28px 28px, linear-gradient(-135deg, transparent 20px, #58a 0);
+}
+
+.chap-19__02 {
+  width: 12em;
+  padding: 2em;
+  margin-bottom: 1em;
+  color: #ffffff;
+  background: #5588aa;
+  background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.4) 0) no-repeat 100% 0/56px 32px, linear-gradient(-150deg, transparent 28px, #58a 0);
+}
+
+.chap-19__02_2 {
+  margin-bottom: 1em;
+  height: 100px;
+  width: 173px;
+  color: #ffffff;
+  background: #5588aa;
+  background: linear-gradient(150deg, transparent 50%, #58a 0);
+}
+
+.chap-19__03, .chap-19__03_2, .chap-19__03_3 {
+  width: 12em;
+  padding: 2em;
+  margin-bottom: 1em;
+  color: #ffffff;
+  background: #5588aa;
+  background: linear-gradient(-150deg, transparent 28px, #58a 0);
+  position: relative;
+}
+
+.chap-19__03::before, .chap-19__03_2::before, .chap-19__03_3::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 56px;
+  height: 32px;
+  background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.4) 0) 100% 0;
+  top: 0;
+  right: 0;
+}
+
+.chap-19__03_2::before, .chap-19__03_3::before {
+  height: 56px;
+  width: 32px;
+  transform: translateY(-24px) rotate(-30deg);
+  transform-origin: bottom right;
+}
+
+.chap-19__03_3 {
+  border-radius: 5px;
+}
+
+.chap-19__03_3::before {
+  background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.4)) 100% 0 no-repeat;
+  border-bottom-left-radius: inherit;
+  box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.15);
+}
+
+.chap-19__03_4 {
+  width: 12em;
+  padding: 2em;
+  position: relative;
+  background: yellow;
+  background: linear-gradient(-140deg, transparent 2em, yellow 0);
+  border-radius: .5em;
+}
+
+.chap-19__03_4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.4)) 100% 0 no-repeat;
+  width: 2.61081em;
+  height: 3.11145em;
+  transform: translateY(-0.50063em) rotate(-10deg);
+  transform-origin: bottom right;
+  border-bottom-left-radius: inherit;
+  box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.2);
+}
+
+.chap-21__01 dl {
+  width: 50%;
+  border: 1px solid #aaa;
+  padding: 10px;
+}
+
+.chap-21__01 dl dd, .chap-21__01 dl dt {
+  display: inline;
+}
+
+.chap-21__01 dl dd + dt::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.chap-21__01 dl dd + dd::before {
+  content: ", ";
+  font-weight: normal;
+}
+
+.chap-22__01 pre {
+  padding: .5em;
+  line-height: 1.5;
+  background-color: beige;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 50%, transparent 0);
+  background-size: auto 3em;
+  background-origin: content-box;
+}
+
+.chap-26__01 p span {
+  background: linear-gradient(gray, gray) no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 1.02em;
+}
+
+.chap-31__01 input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.chap-31__01 input[type="checkbox"] + label::before {
+  content: '\a0';
+  display: inline-block;
+  vertical-align: .2em;
+  width: .8em;
+  height: .8em;
+  margin-right: .2em;
+  border-radius: .2em;
+  background: silver;
+  text-indent: .15em;
+  line-height: 0.65;
+}
+
+.chap-31__01 input[type="checkbox"]:checked + label::before {
+  content: '\2713';
+  background: yellowgreen;
+}
+
+.chap-31__01 input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 .1em .1em #58a;
+}
+
+.chap-31__01 input[type="checkbox"]:disabled + label::before {
+  background: gray;
+  box-shadow: none;
+  color: #555;
+}

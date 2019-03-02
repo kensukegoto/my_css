@@ -1,0 +1,61 @@
+@import "common";
+
+@keyframes bounce {
+	60%, 80%, to {
+		transform: translateY(350px);
+		animation-timing-function: cubic-bezier(.18,.4,.61,1);
+	}
+	70% { transform: translateY(250px); }
+	90% { transform: translateY(300px); }
+}
+
+
+.ball {
+	width: 0; height: 0; padding: 1.5em;
+	border-radius: 50%;
+	margin: auto;
+	background: red radial-gradient(at 30% 30%, #fdd, red);
+	animation: bounce 2s cubic-bezier(.26,.06,.65,.53) infinite;
+}
+
+.chap-42 {
+	background: linear-gradient(skyblue, white 380px, yellowgreen 0);
+	min-height: 60vh;
+}
+
+.chap-44{
+  @keyframes blink-smooth{50% {color: transparent}}
+  .blink{
+    animation: 1s blink-smooth 6;
+  }
+  @keyframes blink-smooth2{to {color: transparent}}
+  .blink2{
+    animation: .5s blink-smooth2 12 alternate;
+  }
+  @keyframes blink-smooth3{50% {color:transparent}}
+  .blink3{
+    animation: 1s blink-smooth3 6 steps(1);
+  }
+}
+.chap-45{
+  @keyframes typing{
+    from {width: 0}
+  }
+  // @keyframes caret{
+  //   50% {border-color:transparent}
+  // }
+  @keyframes caret{
+    50% {border-color: currentColor}
+  }
+  h1{
+    width: 15ch;
+    animation: typing 6s steps(15),caret .5s steps(1) infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "Courier New", Consolas, monospace;
+    box-sizing: content-box;
+    // border-right: .1em sold;
+    border-right: .1em solid transparent;
+
+  }
+}
